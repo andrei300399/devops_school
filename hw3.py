@@ -18,22 +18,17 @@
 # -> собака кот кошка Собака кот
 # 2 - собака
 # 2 - кот
-words = input("Введите строку:").lower().split()
+words_list = input("Введите строку:").lower().split()
 max_count = 0
-max_words = {}
-for word in words:
-    count_tmp = words.count(word)
-    if max_count < count_tmp:
-        max_count=count_tmp
-        max_words.clear()
-        max_words[word]=count_tmp
-    elif max_count == count_tmp:
-        max_words[word]=count_tmp
+count_word_in_text = {}
 
-for word in max_words:
-    print(f"{max_count} - {word}")
+for word in words_list:
+    if word not in count_word_in_text:
+        count_word_in_text[word] = 0
+    count_word_in_text[word] += 1
 
+max_count = max(count_word_in_text.values())
 
-
-
-
+for word in count_word_in_text:
+    if max_count == count_word_in_text[word]:
+        print(f"{max_count} - {word}")
