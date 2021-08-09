@@ -11,7 +11,7 @@
 dict_shells = {}
 dict_uids = {}
 
-with open('/etc/passwd', 'r', encoding='utf-8') as file:
+with open('./passwd', 'r', encoding='utf-8') as file:
     for line in file.readlines():
         passwd_list = line.split(':')
         if passwd_list[6] not in dict_shells:
@@ -26,7 +26,7 @@ with open('./output.txt', 'w', encoding='utf-8') as file:
 
 dict_groups = {}
 
-with open('/etc/group', 'r', encoding='utf-8') as file:
+with open('./group', 'r', encoding='utf-8') as file:
     for line in file.readlines():
         group_list = line.replace("\n", "").split(":")
         group_name = group_list[0]
