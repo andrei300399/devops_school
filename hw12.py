@@ -9,7 +9,7 @@ def fib(n):
     return math.floor(((((1 + 5 ** (1 / 2)) / 2) ** n) - (((1 - 5 ** (1 / 2)) / 2) ** n)) / (5 ** (1 / 2)))
 
 
-print(fib(9))
+print(fib(4))
 
 
 def fib2(n):
@@ -22,4 +22,4 @@ def fib2(n):
     return n2
 
 
-print(fib2(8))
+print(fib2(5432))
